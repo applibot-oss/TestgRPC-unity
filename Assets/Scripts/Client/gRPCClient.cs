@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Grpc.Core;
-using User;
+using Messages;
 
 public class gRPCClient : MonoBehaviour {
 
@@ -15,13 +15,13 @@ public class gRPCClient : MonoBehaviour {
     private void Test() {
         Debug.Log("test start");
 
-        var channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+        var channel = new Channel("127.0.0.1:6565", ChannelCredentials.Insecure);
 
-        var client = new UserService.UserServiceClient(channel);
+        var client = new EchoService.EchoServiceClient(channel);
 
-        var reply = client.GetUser(new UserRequest { UserId = "siguma" });
+        var reply = client.EchoService(new EchoMessage { Message = "test" });
 
-        Debug.Log(reply.Name + " " + reply.Email);
+        Debug.Log(reply.Message);
 
         channel.ShutdownAsync().Wait();
         Debug.Log("Network End");
