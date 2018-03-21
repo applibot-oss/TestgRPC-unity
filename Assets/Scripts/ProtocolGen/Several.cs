@@ -22,13 +22,20 @@ namespace Several {
     static SeveralReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1zZXZlcmFsLnByb3RvEgdzZXZlcmFsIrYBCg5TZXZlcmFsUmVxdWVzdBIK",
-            "CgJpZBgBIAEoCRIOCgZudW1iZXIYAiABKAUSDAoEbGlzdBgDIAMoBRIRCglw",
-            "cmVjaXNpb24YBCABKAISDAoEZmxhZxgFIAEoCBItCgNkaWMYBiADKAsyIC5z",
-            "ZXZlcmFsLlNldmVyYWxSZXF1ZXN0LkRpY0VudHJ5GioKCERpY0VudHJ5EgsK",
-            "A2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCToCOAEiQQoPU2V2ZXJhbFJlc3Bv",
-            "bnNlEhEKCWlzU3VjY2VzcxgBIAEoCBINCgVuYW1lcxgCIAMoCRIMCgRvbGRz",
-            "GAMgAygEMqEBCg5TZXZlcmFsU2VydmljZRJFCg5HZXRTZXZlcmFsRGF0YRIX",
+            "Cg1zZXZlcmFsLnByb3RvEgdzZXZlcmFsIsQDCg5TZXZlcmFsUmVxdWVzdBIR",
+            "CglmbG9hdERhdGEYASABKAISEgoKZG91YmxlRGF0YRgCIAEoARIPCgdpbnRE",
+            "YXRhGAMgASgFEhAKCGxvbmdEYXRhGAQgASgDEhAKCGJvb2xEYXRhGAUgASgI",
+            "EhIKCnN0cmluZ0RhdGEYBiABKAkSEAoIYnl0ZURhdGEYByABKAwSDAoEbGlz",
+            "dBgIIAMoBRIlCglpbm5lckxpc3QYCSADKAsyEi5zZXZlcmFsLmlubmVyVGVz",
+            "dBItCgNkaWMYCiADKAsyIC5zZXZlcmFsLlNldmVyYWxSZXF1ZXN0LkRpY0Vu",
+            "dHJ5EjkKCWRpY1JlcGVhdBgLIAMoCzImLnNldmVyYWwuU2V2ZXJhbFJlcXVl",
+            "c3QuRGljUmVwZWF0RW50cnkSHwoGYW5pbWFsGAwgASgOMg8uc2V2ZXJhbC5B",
+            "bmltYWwaKgoIRGljRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgJ",
+            "OgI4ARpECg5EaWNSZXBlYXRFbnRyeRILCgNrZXkYASABKAUSIQoFdmFsdWUY",
+            "AiABKAsyEi5zZXZlcmFsLmlubmVyVGVzdDoCOAEiGgoJaW5uZXJUZXN0Eg0K",
+            "BWZMaXN0GAEgAygCIiQKD1NldmVyYWxSZXNwb25zZRIRCglpc1N1Y2Nlc3MY",
+            "ASABKAgqLAoGQW5pbWFsEgcKA0RPRxAAEgcKA0NBVBABEgcKA1BJRxACEgcK",
+            "A0ZPWBADMqEBCg5TZXZlcmFsU2VydmljZRJFCg5HZXRTZXZlcmFsRGF0YRIX",
             "LnNldmVyYWwuU2V2ZXJhbFJlcXVlc3QaGC5zZXZlcmFsLlNldmVyYWxSZXNw",
             "b25zZSIAEkgKEVVwZGF0ZVNldmVyYWxEYXRhEhcuc2V2ZXJhbC5TZXZlcmFs",
             "UmVxdWVzdBoYLnNldmVyYWwuU2V2ZXJhbFJlc3BvbnNlIgBCMQoYY29tLmFw",
@@ -36,14 +43,25 @@ namespace Several {
             "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Several.SeveralRequest), global::Several.SeveralRequest.Parser, new[]{ "Id", "Number", "List", "Precision", "Flag", "Dic" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Several.SeveralResponse), global::Several.SeveralResponse.Parser, new[]{ "IsSuccess", "Names", "Olds" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Several.Animal), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Several.SeveralRequest), global::Several.SeveralRequest.Parser, new[]{ "FloatData", "DoubleData", "IntData", "LongData", "BoolData", "StringData", "ByteData", "List", "InnerList", "Dic", "DicRepeat", "Animal" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Several.innerTest), global::Several.innerTest.Parser, new[]{ "FList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Several.SeveralResponse), global::Several.SeveralResponse.Parser, new[]{ "IsSuccess" }, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum Animal {
+    [pbr::OriginalName("DOG")] Dog = 0,
+    [pbr::OriginalName("CAT")] Cat = 1,
+    [pbr::OriginalName("PIG")] Pig = 2,
+    [pbr::OriginalName("FOX")] Fox = 3,
+  }
+
+  #endregion
+
   #region Messages
   public sealed partial class SeveralRequest : pb::IMessage<SeveralRequest> {
     private static readonly pb::MessageParser<SeveralRequest> _parser = new pb::MessageParser<SeveralRequest>(() => new SeveralRequest());
@@ -69,12 +87,18 @@ namespace Several {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SeveralRequest(SeveralRequest other) : this() {
-      id_ = other.id_;
-      number_ = other.number_;
+      floatData_ = other.floatData_;
+      doubleData_ = other.doubleData_;
+      intData_ = other.intData_;
+      longData_ = other.longData_;
+      boolData_ = other.boolData_;
+      stringData_ = other.stringData_;
+      byteData_ = other.byteData_;
       list_ = other.list_.Clone();
-      precision_ = other.precision_;
-      flag_ = other.flag_;
+      innerList_ = other.innerList_.Clone();
       dic_ = other.dic_.Clone();
+      dicRepeat_ = other.dicRepeat_.Clone();
+      animal_ = other.animal_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -82,68 +106,132 @@ namespace Several {
       return new SeveralRequest(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private string id_ = "";
+    /// <summary>Field number for the "floatData" field.</summary>
+    public const int FloatDataFieldNumber = 1;
+    private float floatData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Id {
-      get { return id_; }
+    public float FloatData {
+      get { return floatData_; }
       set {
-        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        floatData_ = value;
       }
     }
 
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 2;
-    private int number_;
+    /// <summary>Field number for the "doubleData" field.</summary>
+    public const int DoubleDataFieldNumber = 2;
+    private double doubleData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Number {
-      get { return number_; }
+    public double DoubleData {
+      get { return doubleData_; }
       set {
-        number_ = value;
+        doubleData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "intData" field.</summary>
+    public const int IntDataFieldNumber = 3;
+    private int intData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntData {
+      get { return intData_; }
+      set {
+        intData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "longData" field.</summary>
+    public const int LongDataFieldNumber = 4;
+    private long longData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long LongData {
+      get { return longData_; }
+      set {
+        longData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "boolData" field.</summary>
+    public const int BoolDataFieldNumber = 5;
+    private bool boolData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool BoolData {
+      get { return boolData_; }
+      set {
+        boolData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stringData" field.</summary>
+    public const int StringDataFieldNumber = 6;
+    private string stringData_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringData {
+      get { return stringData_; }
+      set {
+        stringData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "byteData" field.</summary>
+    public const int ByteDataFieldNumber = 7;
+    private pb::ByteString byteData_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString ByteData {
+      get { return byteData_; }
+      set {
+        byteData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 3;
+    public const int ListFieldNumber = 8;
     private static readonly pb::FieldCodec<int> _repeated_list_codec
-        = pb::FieldCodec.ForInt32(26);
+        = pb::FieldCodec.ForInt32(66);
     private readonly pbc::RepeatedField<int> list_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> List {
       get { return list_; }
     }
 
-    /// <summary>Field number for the "precision" field.</summary>
-    public const int PrecisionFieldNumber = 4;
-    private float precision_;
+    /// <summary>Field number for the "innerList" field.</summary>
+    public const int InnerListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Several.innerTest> _repeated_innerList_codec
+        = pb::FieldCodec.ForMessage(74, global::Several.innerTest.Parser);
+    private readonly pbc::RepeatedField<global::Several.innerTest> innerList_ = new pbc::RepeatedField<global::Several.innerTest>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Precision {
-      get { return precision_; }
-      set {
-        precision_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "flag" field.</summary>
-    public const int FlagFieldNumber = 5;
-    private bool flag_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Flag {
-      get { return flag_; }
-      set {
-        flag_ = value;
-      }
+    public pbc::RepeatedField<global::Several.innerTest> InnerList {
+      get { return innerList_; }
     }
 
     /// <summary>Field number for the "dic" field.</summary>
-    public const int DicFieldNumber = 6;
+    public const int DicFieldNumber = 10;
     private static readonly pbc::MapField<int, string>.Codec _map_dic_codec
-        = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForString(18), 50);
+        = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForString(18), 82);
     private readonly pbc::MapField<int, string> dic_ = new pbc::MapField<int, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, string> Dic {
       get { return dic_; }
+    }
+
+    /// <summary>Field number for the "dicRepeat" field.</summary>
+    public const int DicRepeatFieldNumber = 11;
+    private static readonly pbc::MapField<int, global::Several.innerTest>.Codec _map_dicRepeat_codec
+        = new pbc::MapField<int, global::Several.innerTest>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Several.innerTest.Parser), 90);
+    private readonly pbc::MapField<int, global::Several.innerTest> dicRepeat_ = new pbc::MapField<int, global::Several.innerTest>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Several.innerTest> DicRepeat {
+      get { return dicRepeat_; }
+    }
+
+    /// <summary>Field number for the "animal" field.</summary>
+    public const int AnimalFieldNumber = 12;
+    private global::Several.Animal animal_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Several.Animal Animal {
+      get { return animal_; }
+      set {
+        animal_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,24 +247,36 @@ namespace Several {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
-      if (Number != other.Number) return false;
+      if (FloatData != other.FloatData) return false;
+      if (DoubleData != other.DoubleData) return false;
+      if (IntData != other.IntData) return false;
+      if (LongData != other.LongData) return false;
+      if (BoolData != other.BoolData) return false;
+      if (StringData != other.StringData) return false;
+      if (ByteData != other.ByteData) return false;
       if(!list_.Equals(other.list_)) return false;
-      if (Precision != other.Precision) return false;
-      if (Flag != other.Flag) return false;
+      if(!innerList_.Equals(other.innerList_)) return false;
       if (!Dic.Equals(other.Dic)) return false;
+      if (!DicRepeat.Equals(other.DicRepeat)) return false;
+      if (Animal != other.Animal) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (Number != 0) hash ^= Number.GetHashCode();
+      if (FloatData != 0F) hash ^= FloatData.GetHashCode();
+      if (DoubleData != 0D) hash ^= DoubleData.GetHashCode();
+      if (IntData != 0) hash ^= IntData.GetHashCode();
+      if (LongData != 0L) hash ^= LongData.GetHashCode();
+      if (BoolData != false) hash ^= BoolData.GetHashCode();
+      if (StringData.Length != 0) hash ^= StringData.GetHashCode();
+      if (ByteData.Length != 0) hash ^= ByteData.GetHashCode();
       hash ^= list_.GetHashCode();
-      if (Precision != 0F) hash ^= Precision.GetHashCode();
-      if (Flag != false) hash ^= Flag.GetHashCode();
+      hash ^= innerList_.GetHashCode();
       hash ^= Dic.GetHashCode();
+      hash ^= DicRepeat.GetHashCode();
+      if (Animal != 0) hash ^= Animal.GetHashCode();
       return hash;
     }
 
@@ -187,43 +287,75 @@ namespace Several {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
+      if (FloatData != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(FloatData);
       }
-      if (Number != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Number);
+      if (DoubleData != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(DoubleData);
+      }
+      if (IntData != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntData);
+      }
+      if (LongData != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(LongData);
+      }
+      if (BoolData != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(BoolData);
+      }
+      if (StringData.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(StringData);
+      }
+      if (ByteData.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteBytes(ByteData);
       }
       list_.WriteTo(output, _repeated_list_codec);
-      if (Precision != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Precision);
-      }
-      if (Flag != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(Flag);
-      }
+      innerList_.WriteTo(output, _repeated_innerList_codec);
       dic_.WriteTo(output, _map_dic_codec);
+      dicRepeat_.WriteTo(output, _map_dicRepeat_codec);
+      if (Animal != 0) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Animal);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
-      }
-      if (Number != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
-      }
-      size += list_.CalculateSize(_repeated_list_codec);
-      if (Precision != 0F) {
+      if (FloatData != 0F) {
         size += 1 + 4;
       }
-      if (Flag != false) {
+      if (DoubleData != 0D) {
+        size += 1 + 8;
+      }
+      if (IntData != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntData);
+      }
+      if (LongData != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(LongData);
+      }
+      if (BoolData != false) {
         size += 1 + 1;
       }
+      if (StringData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringData);
+      }
+      if (ByteData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(ByteData);
+      }
+      size += list_.CalculateSize(_repeated_list_codec);
+      size += innerList_.CalculateSize(_repeated_innerList_codec);
       size += dic_.CalculateSize(_map_dic_codec);
+      size += dicRepeat_.CalculateSize(_map_dicRepeat_codec);
+      if (Animal != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Animal);
+      }
       return size;
     }
 
@@ -232,20 +364,34 @@ namespace Several {
       if (other == null) {
         return;
       }
-      if (other.Id.Length != 0) {
-        Id = other.Id;
+      if (other.FloatData != 0F) {
+        FloatData = other.FloatData;
       }
-      if (other.Number != 0) {
-        Number = other.Number;
+      if (other.DoubleData != 0D) {
+        DoubleData = other.DoubleData;
+      }
+      if (other.IntData != 0) {
+        IntData = other.IntData;
+      }
+      if (other.LongData != 0L) {
+        LongData = other.LongData;
+      }
+      if (other.BoolData != false) {
+        BoolData = other.BoolData;
+      }
+      if (other.StringData.Length != 0) {
+        StringData = other.StringData;
+      }
+      if (other.ByteData.Length != 0) {
+        ByteData = other.ByteData;
       }
       list_.Add(other.list_);
-      if (other.Precision != 0F) {
-        Precision = other.Precision;
-      }
-      if (other.Flag != false) {
-        Flag = other.Flag;
-      }
+      innerList_.Add(other.innerList_);
       dic_.Add(other.dic_);
+      dicRepeat_.Add(other.dicRepeat_);
+      if (other.Animal != 0) {
+        Animal = other.Animal;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -256,29 +402,163 @@ namespace Several {
           default:
             input.SkipLastField();
             break;
-          case 10: {
-            Id = input.ReadString();
+          case 13: {
+            FloatData = input.ReadFloat();
             break;
           }
-          case 16: {
-            Number = input.ReadInt32();
+          case 17: {
+            DoubleData = input.ReadDouble();
             break;
           }
-          case 26:
           case 24: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
+            IntData = input.ReadInt32();
             break;
           }
-          case 37: {
-            Precision = input.ReadFloat();
+          case 32: {
+            LongData = input.ReadInt64();
             break;
           }
           case 40: {
-            Flag = input.ReadBool();
+            BoolData = input.ReadBool();
             break;
           }
           case 50: {
+            StringData = input.ReadString();
+            break;
+          }
+          case 58: {
+            ByteData = input.ReadBytes();
+            break;
+          }
+          case 66:
+          case 64: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+          case 74: {
+            innerList_.AddEntriesFrom(input, _repeated_innerList_codec);
+            break;
+          }
+          case 82: {
             dic_.AddEntriesFrom(input, _map_dic_codec);
+            break;
+          }
+          case 90: {
+            dicRepeat_.AddEntriesFrom(input, _map_dicRepeat_codec);
+            break;
+          }
+          case 96: {
+            animal_ = (global::Several.Animal) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class innerTest : pb::IMessage<innerTest> {
+    private static readonly pb::MessageParser<innerTest> _parser = new pb::MessageParser<innerTest>(() => new innerTest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<innerTest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Several.SeveralReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public innerTest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public innerTest(innerTest other) : this() {
+      fList_ = other.fList_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public innerTest Clone() {
+      return new innerTest(this);
+    }
+
+    /// <summary>Field number for the "fList" field.</summary>
+    public const int FListFieldNumber = 1;
+    private static readonly pb::FieldCodec<float> _repeated_fList_codec
+        = pb::FieldCodec.ForFloat(10);
+    private readonly pbc::RepeatedField<float> fList_ = new pbc::RepeatedField<float>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<float> FList {
+      get { return fList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as innerTest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(innerTest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!fList_.Equals(other.fList_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= fList_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      fList_.WriteTo(output, _repeated_fList_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += fList_.CalculateSize(_repeated_fList_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(innerTest other) {
+      if (other == null) {
+        return;
+      }
+      fList_.Add(other.fList_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10:
+          case 13: {
+            fList_.AddEntriesFrom(input, _repeated_fList_codec);
             break;
           }
         }
@@ -294,7 +574,7 @@ namespace Several {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Several.SeveralReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Several.SeveralReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -312,8 +592,6 @@ namespace Several {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SeveralResponse(SeveralResponse other) : this() {
       isSuccess_ = other.isSuccess_;
-      names_ = other.names_.Clone();
-      olds_ = other.olds_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -332,26 +610,6 @@ namespace Several {
       }
     }
 
-    /// <summary>Field number for the "names" field.</summary>
-    public const int NamesFieldNumber = 2;
-    private static readonly pb::FieldCodec<string> _repeated_names_codec
-        = pb::FieldCodec.ForString(18);
-    private readonly pbc::RepeatedField<string> names_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> Names {
-      get { return names_; }
-    }
-
-    /// <summary>Field number for the "olds" field.</summary>
-    public const int OldsFieldNumber = 3;
-    private static readonly pb::FieldCodec<ulong> _repeated_olds_codec
-        = pb::FieldCodec.ForUInt64(26);
-    private readonly pbc::RepeatedField<ulong> olds_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<ulong> Olds {
-      get { return olds_; }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SeveralResponse);
@@ -366,8 +624,6 @@ namespace Several {
         return true;
       }
       if (IsSuccess != other.IsSuccess) return false;
-      if(!names_.Equals(other.names_)) return false;
-      if(!olds_.Equals(other.olds_)) return false;
       return true;
     }
 
@@ -375,8 +631,6 @@ namespace Several {
     public override int GetHashCode() {
       int hash = 1;
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      hash ^= names_.GetHashCode();
-      hash ^= olds_.GetHashCode();
       return hash;
     }
 
@@ -391,8 +645,6 @@ namespace Several {
         output.WriteRawTag(8);
         output.WriteBool(IsSuccess);
       }
-      names_.WriteTo(output, _repeated_names_codec);
-      olds_.WriteTo(output, _repeated_olds_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -401,8 +653,6 @@ namespace Several {
       if (IsSuccess != false) {
         size += 1 + 1;
       }
-      size += names_.CalculateSize(_repeated_names_codec);
-      size += olds_.CalculateSize(_repeated_olds_codec);
       return size;
     }
 
@@ -414,8 +664,6 @@ namespace Several {
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      names_.Add(other.names_);
-      olds_.Add(other.olds_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -428,15 +676,6 @@ namespace Several {
             break;
           case 8: {
             IsSuccess = input.ReadBool();
-            break;
-          }
-          case 18: {
-            names_.AddEntriesFrom(input, _repeated_names_codec);
-            break;
-          }
-          case 26:
-          case 24: {
-            olds_.AddEntriesFrom(input, _repeated_olds_codec);
             break;
           }
         }
