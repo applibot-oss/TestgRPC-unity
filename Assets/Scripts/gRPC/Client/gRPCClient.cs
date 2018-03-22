@@ -14,7 +14,6 @@ namespace grpc.client {
         }
 
         private void Test() {
-            Debug.Log("test start");
 
             var channel = new Channel("127.0.0.1:6565", ChannelCredentials.Insecure);
 
@@ -22,10 +21,7 @@ namespace grpc.client {
 
             var reply = client.EchoService(new EchoMessage { Message = "test" });
 
-            Debug.Log(reply.Message);
-
             channel.ShutdownAsync().Wait();
-            Debug.Log("Network End");
         }
     }
 }
