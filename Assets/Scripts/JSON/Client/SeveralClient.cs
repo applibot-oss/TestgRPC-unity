@@ -21,7 +21,7 @@ namespace json.client {
         private IEnumerator GetSeveralData() {
 
             Debug.Log("network start!");
-            SeveralRequest model = new Several.SeveralRequest();
+            SeveralData model = new Several.SeveralData();
             model.IntData = 1234;
 
             string jsonData = JsonUtility.ToJson(model);
@@ -42,8 +42,8 @@ namespace json.client {
                 Debug.Log(request.downloadHandler.text);
                 if (request.responseCode == 200) {
                     string json = request.downloadHandler.text;
-                    SeveralResponse res = JsonUtility.FromJson<SeveralResponse>(json);
-                    Debug.Log(res.IsSuccess);
+                    SeveralData res = JsonUtility.FromJson<SeveralData>(json);
+                    Debug.Log(res);
                 }
             }
         }

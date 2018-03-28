@@ -15,22 +15,14 @@ namespace Several {
   {
     static readonly string __ServiceName = "several.SeveralService";
 
-    static readonly grpc::Marshaller<global::Several.SeveralRequest> __Marshaller_SeveralRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Several.SeveralRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Several.SeveralResponse> __Marshaller_SeveralResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Several.SeveralResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Several.SeveralData> __Marshaller_SeveralData = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Several.SeveralData.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Several.SeveralRequest, global::Several.SeveralResponse> __Method_GetSeveralData = new grpc::Method<global::Several.SeveralRequest, global::Several.SeveralResponse>(
+    static readonly grpc::Method<global::Several.SeveralData, global::Several.SeveralData> __Method_GetSeveralData = new grpc::Method<global::Several.SeveralData, global::Several.SeveralData>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetSeveralData",
-        __Marshaller_SeveralRequest,
-        __Marshaller_SeveralResponse);
-
-    static readonly grpc::Method<global::Several.SeveralRequest, global::Several.SeveralResponse> __Method_UpdateSeveralData = new grpc::Method<global::Several.SeveralRequest, global::Several.SeveralResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "UpdateSeveralData",
-        __Marshaller_SeveralRequest,
-        __Marshaller_SeveralResponse);
+        __Marshaller_SeveralData,
+        __Marshaller_SeveralData);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -41,12 +33,7 @@ namespace Several {
     /// <summary>Base class for server-side implementations of SeveralService</summary>
     public abstract partial class SeveralServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::Several.SeveralResponse> GetSeveralData(global::Several.SeveralRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::Several.SeveralResponse> UpdateSeveralData(global::Several.SeveralRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Several.SeveralData> GetSeveralData(global::Several.SeveralData request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -76,37 +63,21 @@ namespace Several {
       {
       }
 
-      public virtual global::Several.SeveralResponse GetSeveralData(global::Several.SeveralRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual global::Several.SeveralData GetSeveralData(global::Several.SeveralData request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
         return GetSeveralData(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Several.SeveralResponse GetSeveralData(global::Several.SeveralRequest request, grpc::CallOptions options)
+      public virtual global::Several.SeveralData GetSeveralData(global::Several.SeveralData request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetSeveralData, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Several.SeveralResponse> GetSeveralDataAsync(global::Several.SeveralRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Several.SeveralData> GetSeveralDataAsync(global::Several.SeveralData request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
         return GetSeveralDataAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Several.SeveralResponse> GetSeveralDataAsync(global::Several.SeveralRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Several.SeveralData> GetSeveralDataAsync(global::Several.SeveralData request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetSeveralData, null, options, request);
-      }
-      public virtual global::Several.SeveralResponse UpdateSeveralData(global::Several.SeveralRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
-      {
-        return UpdateSeveralData(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual global::Several.SeveralResponse UpdateSeveralData(global::Several.SeveralRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_UpdateSeveralData, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::Several.SeveralResponse> UpdateSeveralDataAsync(global::Several.SeveralRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
-      {
-        return UpdateSeveralDataAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::Several.SeveralResponse> UpdateSeveralDataAsync(global::Several.SeveralRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_UpdateSeveralData, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override SeveralServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -120,8 +91,7 @@ namespace Several {
     public static grpc::ServerServiceDefinition BindService(SeveralServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetSeveralData, serviceImpl.GetSeveralData)
-          .AddMethod(__Method_UpdateSeveralData, serviceImpl.UpdateSeveralData).Build();
+          .AddMethod(__Method_GetSeveralData, serviceImpl.GetSeveralData).Build();
     }
 
   }
