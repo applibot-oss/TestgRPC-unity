@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,7 @@ namespace json.client {
     [RequireComponent(typeof(Button))]
     public class SeveralJsonClient : MonoBehaviour {
 
-        private const string requestFilePath_ = "/Users/s01308/jsonResult/req.txt";
-        private const string responseFilePath_ = "/Users/s01308/jsonResult/res.txt";
-
+        private const string dataDirPath = "./jsonResult";
         private const string url = "http://localhost:7000/several/data";
 
         private DataCreator dataCreator_;
@@ -25,8 +24,14 @@ namespace json.client {
             severalButton_ = GetComponent<Button>();
             severalButton_.onClick.AddListener(() => StartCoroutine(GetSeveralData()));
             dataCreator_ = GameObject.Find("DataCreator").GetComponent<DataCreator>();
-            reqWriter_ = new System.IO.StreamWriter(requestFilePath_, false);
-            resWriter_ = new System.IO.StreamWriter(responseFilePath_, false);
+
+            string dataFullDirPath = Path.GetFullPath(dataDirPath);
+            if(!Directory.Exists(dataFullDirPath)) {
+                Directory.CreateDirectory(dataFullDirPath);
+            }
+
+            reqWriter_ = new System.IO.StreamWriter(Path.Combine(dataDirPath, "res.txt"), false);
+            resWriter_ = new System.IO.StreamWriter(Path.Combine(dataDirPath, "req.txt"), false);
         }
 
         private IEnumerator GetSeveralData() {

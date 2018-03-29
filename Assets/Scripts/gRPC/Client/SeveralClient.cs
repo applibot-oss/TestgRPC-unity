@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using Grpc.Core;
@@ -10,8 +11,7 @@ namespace grpc.client {
     [RequireComponent(typeof(Button))]
     public class SeveralClient : MonoBehaviour {
 
-        private const string requestFilePath_ = "/Users/s01308/result/req.txt";
-        private const string responseFilePath_ = "/Users/s01308/result/res.txt";
+        private const string dataDirPath = "./result";
         private const string kPortNum = ":6565";
 
         private Button severalButton_;
@@ -23,8 +23,14 @@ namespace grpc.client {
             severalButton_ = GetComponent<Button>();
             severalButton_.onClick.AddListener(Tap);
             dataCreator_ = GameObject.Find("DataCreator").GetComponent<DataCreator>();
-            reqWriter_ = new System.IO.StreamWriter(requestFilePath_, false);
-            resWriter_ = new System.IO.StreamWriter(responseFilePath_, false);
+
+            string dataFullDirPath = Path.GetFullPath(dataDirPath);
+            if(!Directory.Exists(dataFullDirPath)) {
+                Directory.CreateDirectory(dataFullDirPath);
+            }
+
+            reqWriter_ = new System.IO.StreamWriter(Path.Combine(dataDirPath, "res.txt"), false);
+            resWriter_ = new System.IO.StreamWriter(Path.Combine(dataDirPath, "req.txt"), false);
         }
 
         private void Tap() {
